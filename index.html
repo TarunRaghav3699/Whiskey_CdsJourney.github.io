@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDS Journey Batch</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 12px 0;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>CDS Journey Batch</h1>
+    <ul id="fileList">
+        <!-- Links will be added here by JS -->
+    </ul>
+</div>
+
+<script>
+    // List of your HTML files
+    const files = [
+        "Whiskey Batch Maths.html",
+        "uniform batch maths.html",
+        "ancient history.html",
+        "polity in.html",
+        "onepagers.html",
+        "biology.html",
+        "chemistry.html",
+        "englishpractice.html",
+        "english grammar.html",
+        "geography.html"
+    ];
+
+    const fileList = document.getElementById("fileList");
+
+    files.forEach(file => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+
+        // Remove .html extension and extra spaces for display
+        let displayName = file.replace(".html", "").trim();
+
+        a.textContent = displayName;
+        a.href = file;
+        a.target = "_blank"; // opens in new tab
+        li.appendChild(a);
+        fileList.appendChild(li);
+    });
+</script>
+
+</body>
+</html>
